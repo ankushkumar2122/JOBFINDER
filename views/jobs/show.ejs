@@ -1,0 +1,116 @@
+<% layout("/layouts/boilerplate.ejs") -%>
+    <div class="row">
+        <div class="col-8 offset-2 mt-4">
+            <h3>Job Details :</h3>
+            <br>
+            <div class="card">
+                <h5 class="card-header "> <b>
+                        <%= job.companyName %>
+                    </b></h5>
+                <div class="card-body">
+                    <!-- <h5 class="card-title"> <%= job.companyName %></h5> -->
+                    <p class="card-text"><i class="fa-regular fa-user"></i>
+                        <%= job.postby %>
+                    </p>
+                    <p class="card-text">
+                        <%= job.description %>
+                    </p>
+                    <p class="card-text"><i class="fa-solid fa-location-dot"></i>
+                        <%= job.location %>
+                    </p>
+                    <p class="card-text"><i class="fa-solid fa-earth-americas"></i>
+                        <%= job.country %>
+                    </p> <br>
+                    <a href="#" class="btn btn-primary">View Salary & Detail</a>
+                </div>
+            </div>
+            <br><br>
+            <% if(currUser && job.owner._id.equals(currUser._id)) { %>
+
+                <div class="btns">
+                    <a href="/job/<%= job._id %>/edit" class="btn btn-dark   ">Edit</a>
+
+
+                    <form action="/job/<%= job._id %>?_method=Delete" method="post">
+                        <button class="btn btn-outline-danger  offset-4"> Delete</button>
+
+
+                    </form>
+
+                </div>
+                <% } %>
+                    <p class="card-text">owned by: <i>
+                            <%= job.owner.username %>
+                        </i></p>
+        </div>
+    </div>
+
+    </div>
+
+
+
+    <div class="col-8 offset-3 mb-3">
+        <hr>
+        <% if(currUser) { %>
+            <h4>Leave a Review</h4>
+            <form action="/job/<%= job.id %>/review" method="post" novalidate class="needs-validation">
+
+                <div class="mb-3 mt-3">
+                    <label for="rating" class="form-label">Rating</label>
+                    <fieldset class="starability-slot">
+                        <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1" checked
+                            aria-label="No rating." />
+                        <input type="radio" id="first-rate1" name="review[rating]" value="1" />
+                        <label for="first-rate1" title="Terrible">1 star</label>
+                        <input type="radio" id="first-rate2" name="review[rating]" value="2" />
+                        <label for="first-rate2" title="Not good">2 stars</label>
+                        <input type="radio" id="first-rate3" name="review[rating]" value="3" />
+                        <label for="first-rate3" title="Average">3 stars</label>
+                        <input type="radio" id="first-rate4" name="review[rating]" value="4" />
+                        <label for="first-rate4" title="Very good">4 stars</label>
+                        <input type="radio" id="first-rate5" name="review[rating]" value="5" />
+                        <label for="first-rate5" title="Amazing">5 stars</label>
+                    </fieldset>
+                </div>
+
+                <div class="mb-3 mt-3">
+                    <label for="comment" class="form-label">Comment</label>
+                    <textarea name="review[comment]" id="comment" rows="5" cols="30" class="form-control"
+                        required></textarea>
+                    <div class="invalid-feedback">Please Submit add comment for review</div>
+                </div>
+                <button class="btn btn-outline-dark">Submit</button>
+            </form>
+            <hr>
+            <% } %>
+
+                <p> <b>All Review</b></p>
+                <div class="row">
+                    <% for(review of job.reviews) { %>
+                        <div class="card col-5 ms-3 mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    @<%= review.author.username %>
+                                </h5>
+                                <p class="starability-result card-text" data-rating="<%= review.rating %>">
+                                    Rating: <%= review.rating %>
+                                </p>
+                                
+                                <p class="card-text">
+                                    <%= review.comment %>
+                                </p>
+                                <!-- <p class="card-text">
+                                        <%= review.rating %> Stars
+                                    </p> -->
+
+
+                                <form action="/job/<%= job._id %>/review/<%= review._id %>?_method=DELETE" class="mb-3"
+                                    method="post">
+                                    <button class="btn btn-sm btn-dark">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                        <%} %>
+                </div>
+    </div>
+    </div>

@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-md bg-body-tertiary border-bottom sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/job">Job<b><span style="color: blue;">Finder</span></b>.com</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <!-- Links on the left -->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-center">
+                <li class="nav-item me-3">
+                    <a class="nav-link active" aria-current="page" href="/job">All Jobs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/job/new">Post a Job</a>
+                </li>
+            </ul>
+
+            <!-- Location input in the middle -->
+            <form class="d-flex me-3">
+                <input class="form-control me-2" type="text" placeholder="Enter location" aria-label="Location">
+            </form>
+
+            <!-- Centered search form -->
+            <div class="mx-auto">
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search your job" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+
+            <!-- Signup and Login buttons (right-aligned) -->
+            <div class="navbar-nav">
+                <% if(!CurrUser) { %>
+                    <a class="nav-link" href="/signup">SignUp</a>
+                    <a class="nav-link" href="/login">Login</a>
+                    <% } %>
+                        <% if(CurrUser) { %>
+                            <a class="nav-link" href="/logout">LogOut</a>
+                            <% } %>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<!-- <button class="btn btn-outline-success me-2" type="button"> -->

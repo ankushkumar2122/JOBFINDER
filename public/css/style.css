@@ -1,0 +1,142 @@
+body {
+    background-color: pink;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.container{
+    flex: 1;
+}
+
+/* footer */
+.f-info-links a {
+    text-decoration: none;
+    color: black;
+    margin: 10px 15px;
+}
+.f-info-links a:hover{
+    text-decoration: underline;
+    color: black;
+    
+   
+}
+.f-info{
+    height: 5rem;
+    background-color: #ebebeb;
+    display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: space-evenly;
+
+}
+.f-info-brand{
+    background-color: #ebebeb;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.job-link{
+    text-decoration: none;
+    color: black;
+}
+
+.card :hover{
+ background-color: aqua;
+}
+/* .job-card{
+    border: ;
+} */
+/* .card-body:hover{
+    background-color: aqua;
+} */
+
+.btns{
+    display: flex;
+}
+.btns a, .btns button {
+    height: 40px; /* Set to the same height */
+    padding: 5px 15px; /* Adjust padding as necessary */
+}
+
+/* aboutus */
+/* Add this in your public CSS file */
+.about-us-container {
+    /* text-align: center; */
+    margin-top: 20px;
+}
+
+.about-us-content {
+    margin: 20px auto;
+    width: 80%;
+    line-height: 1.6;
+    font-size: 1.1em;
+}
+/* term and condition */
+.container{
+    /* text-align: center; */
+}
+.privacy{
+    text-align: center;
+}
+
+/* contact */
+.contact{
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+   
+    margin: 20px;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+.page-title {
+    color: #2c3e50;
+}
+
+/* Description */
+.description {
+    margin-bottom: 20px;
+}
+
+/* Form Styles */
+#contact-form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+}
+
+/* Input Fields */
+.input-field, .textarea-field {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Submit Button */
+.submit-button {
+    background-color: #2c3e50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #34495e;
+}
+
+/* Contact Information */
+.contact-info-title {
+    color: #2c3e50;
+    margin-top: 20px;
+}
+
+.contact-info {
+    list-style: none;
+    padding: 0;
+}

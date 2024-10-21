@@ -1,0 +1,65 @@
+<% layout("/layouts/boilerplate.ejs") -%>
+
+    <body>
+        <div class="row">
+            <div class="col-8 offset-2">
+                <h1 class="text-center">Edit Job</h1>
+                <form action="/job/<%= job._id %>?_method=PUT" method="post" novalidate class="needs-validation">
+                    <div class="mb-3">
+                        <label for="companyName" class="form-label">Enter Company Name:</label>
+                        <input type="text" name="job[companyName]" value="<%= job.companyName %>" class="form-control" required>
+                        <div class="valid-feedback">
+                            looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please provide a company name.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="postby" class="form-label">Posted By:</label>
+                        <input type="text" name="job[postby]" value="<%= job.postby %>" class="form-control" required>
+                        <div class="valid-feedback">
+                            looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please provide the name of the person posting the job.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description:</label>
+                        <textarea type="text" name="job[description]"
+                            class="form-control" required><%= job.description%></textarea>
+                            <div class="valid-feedback">
+                                looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Please provide a description.
+                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="mb-3 col-md-4">
+                            <label for="location" class="form-label">Location :</label>
+                            <input type="text" name="job[location]" value="<%= job.location %>" class="form-control" required>
+                            <div class="valid-feedback">
+                                looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Please provide a location.
+                            </div>
+                        </div>
+                        <div class="mb-3 col-md-8">
+                            <label for="country" class="form-label">Country :</label>
+                            <input type="text" name="job[country]" value="<%= job.country %>" class="form-control" required>
+                            <div class="valid-feedback">
+                                looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Please provide a country.
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-dark">Edit Job</button>
+                </form>
+            </div>
+        </div>
+    </body>

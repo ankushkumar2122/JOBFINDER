@@ -1,0 +1,24 @@
+<% layout("/layouts/boilerplate.ejs") -%>
+<div class="contact">
+<h1 class="page-title">Contact Us</h1>
+<p class="description">If you have any questions or need assistance, feel free to reach out to us using the form below.</p>
+
+<form id="contact-form" action="send_email.php" method="POST"> <!-- Action points to the PHP script -->
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required class="input-field">
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required class="input-field">
+
+    <label for="subject">Subject:</label>
+    <input type="text" id="subject" name="subject" required class="input-field">
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="5" required class="textarea-field"></textarea>
+
+    <input type="submit" value="Send Message" class="submit-button">
+</form>
+
+
+
+</div>

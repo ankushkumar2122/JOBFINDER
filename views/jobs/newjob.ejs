@@ -1,0 +1,74 @@
+<% layout("/layouts/boilerplate.ejs") -%>
+
+   
+        <div class="row">
+            <div class="col-8 offset-2">
+                <br><br>
+                <h1 class="text-center">Create a New Job</h1>
+                <form id="jobForm" action="/job" method="post" class="mt-4 needs-validation" novalidate>
+                    <div class="mb-3">
+                        <label for="companyName" class="form-label">Enter Company Name:</label>
+                        <input type="text" name="job[companyName]" placeholder="Enter company name" class="form-control"
+                            id="companyName" required>
+                        <div class="valid-feedback">
+                            looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please provide a company name.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="postby" class="form-label">Posted By:</label>
+                        <input type="text" name="job[postby]" placeholder="Enter your name" class="form-control"
+                            id="postby" required>
+                        <div class="valid-feedback">
+                            looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please provide the name of the person posting the job.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description:</label>
+                        <textarea name="job[description]" placeholder="Enter description" class="form-control"
+                            id="description" required></textarea>
+                        <div class="valid-feedback">
+                            looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please provide a description.
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="mb-3 col-md-4">
+                            <label for="location" class="form-label">Location:</label>
+                            <input type="text" name="job[location]" placeholder="Enter location" class="form-control"
+                                id="location" required>
+                            <div class="valid-feedback">
+                                looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Please provide a location.
+                            </div>
+                        </div>
+
+                        <div class="mb-3 col-md-8">
+                            <label for="country" class="form-label">Country:</label>
+                            <input type="text" name="job[country]" placeholder="Enter country" class="form-control"
+                                id="country" required>
+                            <div class="valid-feedback">
+                                looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Please provide a country.
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-dark">Add Job</button>
+                    <br><br>
+                </form>
+            </div>
+        </div>
