@@ -67,9 +67,9 @@ const sessionOption = {
 
 
 
-app.get("/", (req, res) => {
-    res.send("JOB FINDER");
-});
+// app.get("/job", (req, res) => {
+//     res.send("JOB FINDER");
+// });
 
 
 app.use(session(sessionOption));
