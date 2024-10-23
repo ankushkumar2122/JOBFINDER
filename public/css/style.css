@@ -3,6 +3,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    scroll-behavior: smooth;
 }
 .container{
     flex: 1;
@@ -143,4 +144,19 @@ body {
 #icon{
     width: 30px;
     cursor: pointer;
+}
+.arrow{
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    bottom: 80px;
+    right: 30px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+    font-size: 22px;
+   
 }
