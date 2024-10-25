@@ -1,30 +1,18 @@
 <% layout("/layouts/boilerplate.ejs") -%>
-  
-    <h1>All jobs</h1>
-    <!-- <form action="/job/new" method="get">
-        <button>Create new job </button>
-    </form> -->
 
-    <% for(let job of alljobs) { %>
-        <a href="/job/<%= job._id %>" class="job-link">
-    <div class="card">
-        <h5 class="card-header"> <b><%= job.companyName %></b></h5>
+<h1>All jobs</h1>
+
+<% for(let job of alljobs) { %>
+    <div class="card job-card mb-4">
+        <a href="/job/<%= job._id %>" class="stretched-link text-decoration-none"></a> <!-- Link applied over the card -->
+        
+        <h5 class="card-header"><b><%= job.companyName %></b></h5>
         <div class="card-body">
-          <!-- <h5 class="card-title"> <%= job.companyName %></h5> -->
-          <p class="card-text"><i class="fa-regular fa-user"></i> <%= job.postby %></p>
-          <p class="card-text"> <%= job.description %></p>
-          <p class="card-text"><i class="fa-solid fa-location-dot"></i> <%= job.location %></p>
-          <p class="card-text"><i class="fa-solid fa-earth-americas"></i> <%= job.country %></p> <br>
-          <a href="#" class="btn btn-primary">View Salary & Detail</a>
+            <p class="card-text"><i class="fa-regular fa-user"></i> <%= job.postby %></p>
+            <p class="card-text"><%= job.description %></p>
+            <p class="card-text"><i class="fa-solid fa-location-dot"></i> <%= job.location %></p>
+            <p class="card-text"><i class="fa-solid fa-earth-americas"></i> <%= job.country %></p>
+            <a href="#" class="btn btn-primary">View Salary & Detail</a>
         </div>
-      </div>
-      <br>
-      <br>
-      <br>
-    </a>
-      <% } %>
-    
-
-
-
-
+    </div>
+<% } %>

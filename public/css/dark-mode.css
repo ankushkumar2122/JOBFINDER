@@ -1,0 +1,40 @@
+/* Background color and text color for dark mode */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* Navbar styling in dark mode */
+.dark-mode .navbar {
+    background-color: #333;
+    border-color: #444;
+}
+
+.dark-mode .navbar-brand {
+    color: #ffffff;
+}
+
+.dark-mode .navbar-toggler-icon {
+    filter: invert(1);
+}
+
+.dark-mode .nav-link {
+    color: #b0b0b0;
+}
+
+.dark-mode .form-control {
+    background-color: #333;
+    color: #ffffff;
+    border-color: #555;
+}
+
+.dark-mode .btn-outline-success {
+    color: #ffffff;
+    border-color: #666;
+}
+
+.dark-mode .btn-outline-success:hover {
+    background-color: #666;
+    color: #ffffff;
+    border-color: #888;
+}
